@@ -6,7 +6,7 @@
 	var submit = document.querySelector('[data-cv-submit]');
 	var answer = document.querySelector('#cv-answer');
 	var feedback = document.querySelector('[data-cv-feedback]');
-	var cvParts = ['https://drive.google.com/file/d/', '1d9OMtyabxRPVruchOfk_QRLe_-gkIJ9u', '/view?usp=sharing'];
+	var cvParts = ['https://drive.google.com/file/d/', '1f5kps9br0Kg0XUjJipDB6DViGdAgXtJ3', '/view?usp=sharing'];
 
 	if (!trigger || !challenge || !submit || !answer || !feedback) {
 		return;
