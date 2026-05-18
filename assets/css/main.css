@@ -176,91 +176,10 @@ h3 {
 	overflow: hidden;
 }
 
-.motion-panel {
-	position: relative;
-	isolation: isolate;
-	background:
-		linear-gradient(145deg, rgba(15, 118, 110, 0.18), transparent 34%),
-		linear-gradient(315deg, rgba(223, 107, 79, 0.22), transparent 38%),
-		var(--charcoal);
-	overflow: hidden;
-}
-
-.motion-panel:before,
-.motion-panel:after {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	pointer-events: none;
-}
-
-.motion-panel:before {
-	inset: 10% -28% auto;
-	height: 34%;
-	border-top: 1px solid rgba(255, 255, 255, 0.22);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-	background: rgba(255, 255, 255, 0.06);
-	transform: rotate(-16deg);
-	animation: panel-drift 12s ease-in-out infinite alternate;
-}
-
-.motion-panel:after {
-	inset: auto 8% 8%;
-	height: 28%;
-	border: 1px solid rgba(255, 255, 255, 0.16);
-	background:
-		linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
-		linear-gradient(0deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-	background-size: 32px 32px;
-	animation: panel-pulse 5s ease-in-out infinite;
-}
-
-.motion-grid,
-.motion-scan,
-.motion-bars,
-.motion-rings {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-}
-
-.motion-grid {
-	inset: -20%;
-	background:
-		linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
-		linear-gradient(0deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
-	background-size: 44px 44px;
-	opacity: 0.72;
-	transform: rotate(-8deg);
-	animation: grid-slide 18s linear infinite;
-}
-
-.motion-scan {
-	background: linear-gradient(180deg, transparent 0 36%, rgba(142, 214, 202, 0.22) 45%, transparent 56% 100%);
-	mix-blend-mode: screen;
-	animation: scan-pass 7s ease-in-out infinite;
-}
-
-.motion-bars {
-	inset: 12%;
-	background:
-		linear-gradient(90deg, transparent 0 10%, rgba(142, 214, 202, 0.88) 10% 18%, transparent 18% 28%, rgba(223, 107, 79, 0.88) 28% 38%, transparent 38% 54%, rgba(200, 148, 46, 0.9) 54% 64%, transparent 64% 100%),
-		repeating-linear-gradient(0deg, transparent 0 18px, rgba(255, 255, 255, 0.1) 18px 20px);
-	background-size: 140% 100%, 100% 42px;
-	clip-path: polygon(0 12%, 82% 0, 100% 88%, 18% 100%);
-	filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.28));
-	animation: bars-flow 8s ease-in-out infinite alternate;
-}
-
-.motion-rings {
-	inset: 12%;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	background:
-		linear-gradient(90deg, transparent 48%, rgba(255, 255, 255, 0.28) 48% 52%, transparent 52%),
-		linear-gradient(0deg, transparent 48%, rgba(255, 255, 255, 0.2) 48% 52%, transparent 52%),
-		repeating-conic-gradient(from 45deg, rgba(142, 214, 202, 0.8) 0deg 8deg, transparent 8deg 30deg, rgba(223, 107, 79, 0.75) 30deg 38deg, transparent 38deg 60deg);
-	clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-	animation: rings-turn 18s linear infinite;
+.hero-media img {
+	height: 100%;
+	object-fit: cover;
+	filter: saturate(0.92) contrast(1.06);
 }
 
 .hero-content {
@@ -463,17 +382,14 @@ h3 {
 }
 
 .feature-image {
-	aspect-ratio: 5 / 6;
 	border: 1px solid var(--ink);
 	box-shadow: var(--shadow);
 	overflow: hidden;
 }
 
-.stack-panel {
-	background:
-		linear-gradient(135deg, rgba(36, 87, 197, 0.22), transparent 34%),
-		linear-gradient(315deg, rgba(200, 148, 46, 0.2), transparent 35%),
-		#13202a;
+.feature-image img {
+	aspect-ratio: 5 / 6;
+	object-fit: cover;
 }
 
 .feature-copy {
@@ -641,67 +557,6 @@ h3 {
 .site-footer a {
 	color: #fff;
 	font-weight: 750;
-}
-
-@keyframes grid-slide {
-	to {
-		background-position: 88px 44px;
-	}
-}
-
-@keyframes scan-pass {
-	0%,
-	100% {
-		transform: translateY(-44%);
-		opacity: 0.28;
-	}
-
-	45%,
-	55% {
-		opacity: 0.8;
-	}
-
-	70% {
-		transform: translateY(44%);
-		opacity: 0.36;
-	}
-}
-
-@keyframes bars-flow {
-	to {
-		background-position: 100% 0, 0 42px;
-		transform: translate3d(4%, -2%, 0) skewY(-4deg);
-	}
-}
-
-@keyframes rings-turn {
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes panel-drift {
-	to {
-		transform: translate3d(8%, 12%, 0) rotate(-10deg);
-	}
-}
-
-@keyframes panel-pulse {
-	50% {
-		opacity: 0.55;
-		transform: translateY(-0.5rem);
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.motion-panel:before,
-	.motion-panel:after,
-	.motion-grid,
-	.motion-scan,
-	.motion-bars,
-	.motion-rings {
-		animation: none;
-	}
 }
 
 @media (max-width: 940px) {
